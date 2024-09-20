@@ -3,14 +3,20 @@ import './App'
 import Header from './Components/Header/Header'
 
 import CarouselEffect from './Components/Carousel/CarouselEffect'
+import Category from './Components/Catagory/Category'
+import Product from './Components/Product/Product'
 
 function App() {
   return (
-    <div>
-    <Header />
-    
-    <CarouselEffect/>
-    </div>
+    <>
+      // <Header />
+      
+      <CarouselEffect/>
+      <Category/>
+      <Product />
+
+
+    </>
   )
 }
 
