@@ -7,6 +7,7 @@ import  productUrl from '../../Api/endpoints';
 import ProductCard from '../../Components/Product/ProductCard';
 
 function Results() {
+	const [results, setResults] = useState([]);
   const { categoryName } = useParams();
   // console.log(categoryName)
   useEffect(() => {
