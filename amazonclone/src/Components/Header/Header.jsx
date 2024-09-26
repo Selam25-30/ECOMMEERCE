@@ -6,14 +6,15 @@ import { BsSearch } from "react-icons/bs";
 import LowerHeader from './LowerHeader';
 import { DataContext } from "../DataProvider/DataProvider";
 
-import { DataProvider } from '../DataProvider/DataProvider';
+// import { DataProvider } from '../DataProvider/DataProvider';
 import { BiCart } from "react-icons/bi";
+import { auth } from "../../Utility/firebase";
 
 function Header() {
-    const [{basket}, dispatch] = useContext(DataContext);
+    const [{ user,basket}, dispatch] = useContext(DataContext);
     console.log(basket.length);
     const totalItem = basket?.reduce((amount, item) => {
-      return item.amount + amount;
+      return item.amount  + amount;
     }, 0);
   return (
       <>
@@ -45,7 +46,7 @@ function Header() {
                 </select>
                 <input type="text" name="" id="" placeholder='search product' />
                 
-                <BsSearch />
+                <BsSearch size={38} />
                 {/*icon */}
             </div>
 
@@ -61,11 +62,31 @@ function Header() {
                 </Link>
 
             {/* three components */}
-            <Link to='' >
-                    <p>Sign In</p>
-            <span>Account & Lists</span>
-
-                </Link >
+            
+            
+                {/* <Link to="/auth">
+                    <div>
+                        <p>Hello, Sign in</p>
+                        <span>Account & Lists</span>
+                    </div>
+                </Link> */}
+                <Link to={!user && "/auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]}</p>
+                    <span onClick={() => auth.signOut()}>
+                      Sign Out
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello, Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
+            </Link>
 
                 <Link to='/orders'>
                     <p>returns</p>
@@ -77,7 +98,7 @@ function Header() {
                 {/*cart */}
                 <Link to="/cart" className={classes.cart}>
                 {/*icon */}
-                <BiCart size={35} />
+                <BiCart size={40} />
                 <span>{totalItem}</span>
                 
                 </Link>
