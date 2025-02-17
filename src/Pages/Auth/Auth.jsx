@@ -1,16 +1,3 @@
-// import React from 'react'
-// import classes from '../Auth/SignUp.module.css';
-// // import LayOut from "../../Components/LayOut/LayOut";
-// function Auth() {
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
-
-// export default Auth
-
 import React, { useState, useContext } from "react";
 import classes from "./SignUp.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
