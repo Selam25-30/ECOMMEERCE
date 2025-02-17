@@ -4,7 +4,6 @@ import classes from './Category.module.css'
 import categoryInfos from './CategoryFullInfos'
 import CategoryCard from './CategoryCard'
 
-
 function Category() {
   return (
     <section className={classes.Category__container}>
