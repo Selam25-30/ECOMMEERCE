@@ -4,7 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { img } from './data';
 import classes from './Carousel.module.css'
 
-
 function CarouselEffect() {
   return (
     <div>
