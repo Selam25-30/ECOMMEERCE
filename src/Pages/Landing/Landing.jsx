@@ -6,6 +6,7 @@ import Product from '../../Components/Product/Product'
 
 
 function Landing() {
+  
   return (
     <LayOut>
         <CarouselEffect/>
