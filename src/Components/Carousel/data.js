@@ -6,4 +6,5 @@ import img5 from './img/1005.png'
 
 
 
+
 export const img= [img1,img2,img3,img4,img5]
