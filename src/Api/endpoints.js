@@ -1,4 +1,4 @@
-const productUrl = "https://fakestoreapi.com"
+const productUrl = "https://fakestoreapi.com" 
 
 
 export default productUrl
